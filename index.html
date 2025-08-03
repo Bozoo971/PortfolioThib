@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./src/assets/img/ظ (1).png"
+      type="image/x-icon"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <title>Thibaut LOUIS - Portfolio</title>
+  </head>
+  <body class="bg-slate-50 font-['Poppins'] text-slate-800">
+    <!-- Navigation -->
+    <nav
+      id="portfolio-navbar"
+      class="fixed top-0 left-0 w-full z-50 bg-white/85 backdrop-blur-lg border-b border-teal-100/60 shadow-lg transition-all duration-700"
+    >
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-18 lg:h-22">
+          <!-- Logo et nom -->
+          <div class="flex-shrink-0 z-20">
+            <a
+              href="#hero-section"
+              class="portfolio-logo group flex items-center space-x-3 transition-all duration-500 hover:scale-110"
+            >
+              <div class="relative">
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-teal-400 via-teal-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:rotate-6 group-hover:scale-110"
+                >
+                  <span class="text-white font-bold text-xl">TL</span>
+                </div>
+                <div
+                  class="absolute -inset-2 bg-gradient-to-br from-teal-400 via-teal-500 to-teal-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-all duration-500"
+                ></div>
+              </div>
+              <div class="hidden sm:block">
+                <span class="text-2xl font-bold text-slate-800">Thibaut</span>
+                <span
+                  class="text-2xl font-bold bg-gradient-to-r from-teal-500 to-teal-600 bg-clip-text text-transparent"
+                  >LOUIS</span
+                >
+              </div>
+            </a>
+          </div>
+
+          <!-- Navigation Desktop -->
+          <div class="hidden lg:block">
+            <div class="flex items-center space-x-2">
+              <a
+                href="#hero-section"
+                class="portfolio-nav-link relative px-6 py-3 text-slate-700 hover:text-teal-600 font-semibold transition-all duration-400 group"
+              >
+                <span class="relative z-10">Accueil</span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-teal-50 to-slate-50 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-400 ease-out"
+                ></div>
+              </a>
+              <a
+                href="#apropos"
+                class="portfolio-nav-link relative px-6 py-3 text-slate-700 hover:text-teal-600 font-semibold transition-all duration-400 group"
+              >
+                <span class="relative z-10">À propos</span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-teal-50 to-slate-50 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-400 ease-out"
+                ></div>
+              </a>
+              <a
+                href="#competences"
+                class="portfolio-nav-link relative px-6 py-3 text-slate-700 hover:text-teal-600 font-semibold transition-all duration-400 group"
+              >
+                <span class="relative z-10">Compétences</span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-teal-50 to-slate-50 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-400 ease-out"
+                ></div>
+              </a>
+              <a
+                href="#projets"
+                class="portfolio-nav-link relative px-6 py-3 text-slate-700 hover:text-teal-600 font-semibold transition-all duration-400 group"
+              >
+                <span class="relative z-10">Projets</span>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-teal-50 to-slate-50 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-400 ease-out"
+                ></div>
+              </a>
+              <a
+                href="#contact"
+                class="relative px-8 py-3 ml-4 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-semibold rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all duration-400 transform hover:scale-110 hover:shadow-xl hover:shadow-teal-500/30"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+
+          <!-- Bouton Menu Mobile -->
+          <div class="lg:hidden">
+            <button
+              id="portfolio-menu-btn"
+              type="button"
+              class="portfolio-menu-button relative inline-flex items-center justify-center p-4 rounded-2xl bg-white/90 backdrop-blur-lg text-slate-700 hover:text-teal-600 hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-all duration-400 shadow-lg hover:shadow-xl"
+              aria-expanded="false"
+              aria-controls="portfolio-mobile-menu"
+            >
+              <span class="sr-only">Ouvrir le menu de navigation</span>
+              <!-- Icône menu -->
+              <div
+                class="portfolio-menu-icon w-7 h-7 flex flex-col justify-center items-center"
+              >
+                <span
+                  class="portfolio-menu-line block w-7 h-0.5 bg-current transform transition-all duration-400 ease-in-out rounded-full"
+                ></span>
+                <span
+                  class="portfolio-menu-line block w-7 h-0.5 bg-current transform transition-all duration-400 ease-in-out mt-1.5 rounded-full"
+                ></span>
+                <span
+                  class="portfolio-menu-line block w-7 h-0.5 bg-current transform transition-all duration-400 ease-in-out mt-1.5 rounded-full"
+                ></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Mobile Portfolio -->
+      <div
+        id="portfolio-mobile-menu"
+        class="lg:hidden portfolio-mobile-container fixed inset-x-4 top-20 bg-gradient-to-br from-white/98 via-white/95 to-teal-50/98 backdrop-blur-2xl shadow-3xl border border-teal-200/60 rounded-3xl transform -translate-y-full opacity-0 transition-all duration-700 ease-out z-50 overflow-hidden hidden"
+      >
+        <!-- En-tête du menu -->
+        <div
+          class="bg-gradient-to-r from-teal-500 to-teal-600 p-6 relative overflow-hidden"
+        >
+          <div class="absolute inset-0 bg-white/10 opacity-40"></div>
+          <div class="relative flex items-center space-x-4">
+            <div
+              class="w-10 h-10 bg-white/25 rounded-2xl flex items-center justify-center"
+            >
+              <span class="text-white font-bold text-lg">TL</span>
+            </div>
+            <div>
+              <h3 class="text-white font-bold text-xl">Navigation</h3>
+              <p class="text-white/90 text-sm">Portfolio Thibaut LOUIS</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Liens de navigation -->
+        <div class="p-8 space-y-4">
+          <a
+            href="#hero-section"
+            class="portfolio-mobile-link group flex items-center p-5 text-slate-800 hover:text-teal-600 font-semibold transition-all duration-400 rounded-2xl hover:bg-gradient-to-r hover:from-teal-50 hover:to-slate-50 hover:shadow-xl transform hover:scale-[1.03] active:scale-[0.97]"
+          >
+            <div
+              class="flex items-center justify-center w-12 h-12 bg-slate-100 group-hover:bg-teal-100 rounded-2xl mr-5 transition-all duration-400"
+            >
+              <svg
+                class="w-6 h-6 text-slate-600 group-hover:text-teal-600 transition-colors duration-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-xl font-semibold">Accueil</span>
+            <div
+              class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+            >
+              <svg
+                class="w-6 h-6 text-teal-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </div>
+          </a>
+
+          <a
+            href="#apropos"
+            class="portfolio-mobile-link group flex items-center p-5 text-slate-800 hover:text-teal-600 font-semibold transition-all duration-400 rounded-2xl hover:bg-gradient-to-r hover:from-teal-50 hover:to-slate-50 hover:shadow-xl transform hover:scale-[1.03] active:scale-[0.97]"
+          >
+            <div
+              class="flex items-center justify-center w-12 h-12 bg-slate-100 group-hover:bg-teal-100 rounded-2xl mr-5 transition-all duration-400"
+            >
+              <svg
+                class="w-6 h-6 text-slate-600 group-hover:text-teal-600 transition-colors duration-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-xl font-semibold">À propos</span>
+            <div
+              class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+            >
+              <svg
+                class="w-6 h-6 text-teal-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </div>
+          </a>
+
+          <a
+            href="#competences"
+            class="portfolio-mobile-link group flex items-center p-5 text-slate-800 hover:text-teal-600 font-semibold transition-all duration-400 rounded-2xl hover:bg-gradient-to-r hover:from-teal-50 hover:to-slate-50 hover:shadow-xl transform hover:scale-[1.03] active:scale-[0.97]"
+          >
+            <div
+              class="flex items-center justify-center w-12 h-12 bg-slate-100 group-hover:bg-teal-100 rounded-2xl mr-5 transition-all duration-400"
+            >
+              <svg
+                class="w-6 h-6 text-slate-600 group-hover:text-teal-600 transition-colors duration-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-xl font-semibold">Compétences</span>
+            <div
+              class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+            >
+              <svg
+                class="w-6 h-6 text-teal-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </div>
+          </a>
+
+          <a
+            href="#projets"
+            class="portfolio-mobile-link group flex items-center p-5 text-slate-800 hover:text-teal-600 font-semibold transition-all duration-400 rounded-2xl hover:bg-gradient-to-r hover:from-teal-50 hover:to-slate-50 hover:shadow-xl transform hover:scale-[1.03] active:scale-[0.97]"
+          >
+            <div
+              class="flex items-center justify-center w-12 h-12 bg-slate-100 group-hover:bg-teal-100 rounded-2xl mr-5 transition-all duration-400"
+            >
+              <svg
+                class="w-6 h-6 text-slate-600 group-hover:text-teal-600 transition-colors duration-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                ></path>
+              </svg>
+            </div>
+            <span class="text-xl font-semibold">Projets</span>
+            <div
+              class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+            >
+              <svg
+                class="w-6 h-6 text-teal-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Bouton Contact spécial -->
+          <div class="pt-6 border-t border-slate-200/60">
+            <a
+              href="#contact"
+              class="group flex items-center justify-center p-5 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-bold rounded-2xl hover:from-teal-600 hover:to-teal-700 transition-all duration-400 transform hover:scale-[1.03] active:scale-[0.97] shadow-2xl hover:shadow-3xl"
+            >
+              <svg
+                class="w-6 h-6 mr-4 group-hover:rotate-12 transition-transform duration-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <span class="text-xl font-bold">Me Contacter</span>
+              <div
+                class="ml-auto opacity-70 group-hover:opacity-100 transition-opacity duration-400"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pied de page du menu -->
+        <div class="px-8 py-6 bg-slate-50/90 border-t border-slate-200/60">
+          <p class="text-center text-sm text-slate-600 font-semibold">
+            Portfolio BTS SIO 2024 - Thibaut LOUIS
+          </p>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Fond animé -->
+    <div id="three-container" class="fixed inset-0 z-0"></div>
+
+    <!-- Hero Section -->
+    <section
+      id="hero-section"
+      class="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      <!-- Contenu principal -->
+      <div
+        class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32"
+      >
+        <div class="hero-content space-y-12">
+          <!-- Badge d'alternance -->
+          <div
+            class="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-teal-200/50 shadow-lg transform hover:scale-105 transition-all duration-500"
+          >
+            <div
+              class="w-2 h-2 bg-teal-500 rounded-full mr-3 animate-pulse"
+            ></div>
+            <span class="text-xs font-bold text-slate-700"
+              >En recherche d'alternance en informatique</span
+            >
+            <div
+              class="ml-3 w-2 h-2 bg-teal-400 rounded-full animate-pulse"
+              style="animation-delay: 0.5s"
+            ></div>
+          </div>
+
+          <!-- Bulle pour image de profil -->
+          <div class="flex justify-center mb-6">
+            <div class="relative group">
+              <div
+                class="w-32 h-32 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-all duration-500 border-4 border-white"
+              >
+                <div
+                  class="w-28 h-28 bg-gradient-to-br from-teal-300 to-teal-500 rounded-full flex items-center justify-center"
+                >
+                  <span class="text-white text-3xl font-bold">TL</span>
+                </div>
+              </div>
+              <div
+                class="absolute -inset-4 bg-gradient-to-br from-teal-400/20 to-cyan-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Titre principal élégant (sur une ligne) -->
+          <div class="space-y-4">
+            <h1
+              id="hero-main-title"
+              class="text-4xl md:text-6xl lg:text-7xl font-black text-slate-800 leading-none"
+            >
+              <span
+                class="inline bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 bg-clip-text text-transparent transform hover:scale-105 transition-transform duration-500"
+                >THIBAUT</span
+              >
+              <span
+                class="inline ml-4 bg-gradient-to-r from-teal-500 via-teal-600 to-teal-700 bg-clip-text text-transparent transform hover:scale-105 transition-transform duration-500"
+                >LOUIS</span
+              >
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-600 font-medium">
+              Passionné d'informatique en quête d'alternance
+            </p>
+          </div>
+
+          <!-- Description élégante -->
+          <div class="max-w-4xl mx-auto">
+            <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
+              Passionné d'informatique, je reprends mes études pour me former
+              aux métiers du numérique. Curieux de tout, je recherche une
+              alternance pour apprendre et évoluer dans ce domaine qui me
+              passionne.
+            </p>
+          </div>
+
+          <!-- Boutons élégants -->
+          <div
+            class="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          >
+            <a
+              href="#projets"
+              id="hero-projects-btn"
+              class="group relative px-10 py-5 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-bold rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-500 overflow-hidden border border-teal-400/50"
+            >
+              <span class="relative z-10 text-white flex items-center text-lg">
+                <svg
+                  class="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+                Voir mes projets
+              </span>
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-teal-600 to-teal-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+            </a>
+
+            <a
+              href="#contact"
+              id="hero-contact-btn"
+              class="group relative px-10 py-5 bg-white/90 backdrop-blur-sm text-slate-700 font-bold rounded-2xl border-2 border-slate-200 hover:border-teal-300 shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-500"
+            >
+              <span
+                class="relative z-10 text-slate-700 flex items-center text-lg"
+              >
+                <svg
+                  class="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                Me contacter
+              </span>
+            </a>
+          </div>
+
+          <!-- Statistiques élégantes -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+            <div
+              class="stat-item text-center group transform hover:scale-110 transition-all duration-500"
+              id="hero-stat-1"
+            >
+              <div
+                class="text-4xl font-black text-teal-500 group-hover:text-teal-600 transition-colors duration-300 mb-3"
+              >
+                5+
+              </div>
+              <div class="text-sm text-slate-600 font-medium">
+                Projets web réalisés
+              </div>
+            </div>
+
+            <div
+              class="stat-item text-center group transform hover:scale-110 transition-all duration-500"
+              id="hero-stat-2"
+            >
+              <div
+                class="text-4xl font-black text-teal-400 group-hover:text-teal-500 transition-colors duration-300 mb-3"
+              >
+                6+
+              </div>
+              <div class="text-sm text-slate-600 font-medium">
+                Technologies apprises
+              </div>
+            </div>
+
+            <div
+              class="stat-item text-center group transform hover:scale-110 transition-all duration-500"
+              id="hero-stat-3"
+            >
+              <div
+                class="text-4xl font-black text-teal-600 group-hover:text-teal-700 transition-colors duration-300 mb-3"
+              >
+                100%
+              </div>
+              <div class="text-sm text-slate-600 font-medium">
+                Motivation & passion
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- À propos -->
+    <section
+      id="apropos"
+      class="relative min-h-screen py-24 bg-gradient-to-br from-slate-50 via-white to-teal-50/30 overflow-hidden"
+    >
+      <!-- Éléments décoratifs -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute top-20 left-10 w-72 h-72 bg-teal-100/20 rounded-full blur-3xl animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-32 right-16 w-96 h-96 bg-teal-200/15 rounded-full blur-3xl animate-pulse"
+          style="animation-delay: 2s"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/3 w-48 h-48 bg-cyan-100/25 rounded-full blur-2xl animate-pulse"
+          style="animation-delay: 4s"
+        ></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- En-tête de section -->
+        <div class="text-center mb-20 space-y-6">
+          <div
+            class="inline-flex items-center px-6 py-3 bg-white/70 backdrop-blur-sm rounded-full border border-teal-200/50 shadow-lg"
+          >
+            <div
+              class="w-2 h-2 bg-teal-500 rounded-full mr-3 animate-ping"
+            ></div>
+            <span class="text-sm font-bold text-slate-700"
+              >Découvrez mon parcours</span
+            >
+          </div>
+
+          <h2
+            class="text-5xl md:text-6xl font-black text-slate-800 leading-tight"
+          >
+            <span
+              class="inline-block bg-gradient-to-r from-teal-500 to-teal-600 bg-clip-text text-transparent transform hover:scale-105 transition-transform duration-500"
+            >
+              À propos
+            </span>
+            <br />
+            <span class="text-3xl md:text-4xl font-bold text-slate-600"
+              >de moi</span
+            >
+          </h2>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Colonne gauche - Photo et infos personnelles -->
+          <div class="space-y-8">
+            <!-- Photo de profil élégante -->
+            <div class="relative group mx-auto lg:mx-0 w-fit">
+              <div class="relative w-80 h-80 mx-auto">
+                <!-- Cercles décoratifs -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-teal-400/20 to-cyan-400/20 rounded-full animate-spin-slow"
+                ></div>
+                <div
+                  class="absolute inset-4 bg-gradient-to-br from-teal-300/30 to-teal-500/30 rounded-full animate-pulse"
+                ></div>
+
+                <!-- Photo principale -->
+                <div
+                  class="absolute inset-8 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-105 transition-all duration-700 border-4 border-white"
+                >
+                  <div
+                    class="w-full h-full bg-gradient-to-br from-teal-300 to-teal-500 rounded-full flex items-center justify-center"
+                  >
+                    <span class="text-white text-6xl font-black">TL</span>
+                  </div>
+                </div>
+
+                <!-- Effet de brillance -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                ></div>
+              </div>
+
+              <!-- Badge flottant -->
+              <div
+                class="absolute -bottom-4 -right-4 bg-white rounded-2xl px-4 py-2 shadow-xl border border-teal-200/50 transform rotate-12 group-hover:rotate-6 transition-transform duration-500"
+              >
+                <div class="flex items-center space-x-2">
+                  <div
+                    class="w-3 h-3 bg-green-400 rounded-full animate-pulse"
+                  ></div>
+                  <span class="text-sm font-bold text-slate-700"
+                    >Disponible</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Cartes d'informations -->
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-teal-100/60 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-500 group"
+              >
+                <div class="text-center space-y-2">
+                  <div
+                    class="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300"
+                  >
+                    <svg
+                      class="w-6 h-6 text-teal-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h3 class="font-bold text-slate-800">Âge</h3>
+                  <p class="text-2xl font-black text-teal-600">25 ans</p>
+                </div>
+              </div>
+
+              <div
+                class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-teal-100/60 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-500 group"
+              >
+                <div class="text-center space-y-2">
+                  <div
+                    class="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300"
+                  >
+                    <svg
+                      class="w-6 h-6 text-teal-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h3 class="font-bold text-slate-800">Localisation</h3>
+                  <p class="text-sm font-bold text-teal-600">France</p>
+                </div>
+              </div>
+
+              <div
+                class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-teal-100/60 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-500 group"
+              >
+                <div class="text-center space-y-2">
+                  <div
+                    class="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300"
+                  >
+                    <svg
+                      class="w-6 h-6 text-teal-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h3 class="font-bold text-slate-800">Formation</h3>
+                  <p class="text-sm font-bold text-teal-600">BTS SIO</p>
+                </div>
+              </div>
+
+              <div
+                class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-teal-100/60 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-500 group"
+              >
+                <div class="text-center space-y-2">
+                  <div
+                    class="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300"
+                  >
+                    <svg
+                      class="w-6 h-6 text-teal-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h3 class="font-bold text-slate-800">Objectif</h3>
+                  <p class="text-sm font-bold text-teal-600">Alternance</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonne droite - Description et parcours -->
+          <div class="space-y-10">
+            <!-- Description personnelle -->
+            <div
+              class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-teal-100/60 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02]"
+            >
+              <h3
+                class="text-2xl font-bold text-slate-800 mb-6 flex items-center"
+              >
+                <div
+                  class="w-8 h-8 bg-teal-100 rounded-xl flex items-center justify-center mr-3"
+                >
+                  <svg
+                    class="w-5 h-5 text-teal-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    ></path>
+                  </svg>
+                </div>
+                Mon histoire
+              </h3>
+              <div class="space-y-4 text-slate-600 leading-relaxed">
+                <p class="text-lg">
+                  Passionné d'informatique depuis toujours, j'ai décidé de
+                  reprendre mes études pour me former aux métiers du numérique
+                  qui m'attirent tant.
+                </p>
+                <p>
+                  Curieux de nature et toujours prêt à relever de nouveaux
+                  défis, je recherche une alternance qui me permettra d'allier
+                  théorie et pratique dans un environnement stimulant.
+                </p>
+                <p>
+                  Mon objectif ? Apprendre, évoluer et contribuer activement aux
+                  projets qui me seront confiés avec toute ma motivation et ma
+                  détermination.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline du parcours -->
+            <div class="space-y-6">
+              <h3 class="text-2xl font-bold text-slate-800 flex items-center">
+                <div
+                  class="w-8 h-8 bg-teal-100 rounded-xl flex items-center justify-center mr-3"
+                >
+                  <svg
+                    class="w-5 h-5 text-teal-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                Mon parcours
+              </h3>
+
+              <div class="relative">
+                <!-- Ligne timeline -->
+                <div
+                  class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal-400 to-teal-600"
+                ></div>
+
+                <!-- Éléments timeline -->
+                <div class="space-y-8">
+                  <div class="relative flex items-start group">
+                    <div
+                      class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-teal-400 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                    >
+                      <svg
+                        class="w-8 h-8 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div
+                      class="ml-6 bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-teal-100/60 shadow-lg flex-1 group-hover:shadow-xl transition-all duration-300"
+                    >
+                      <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-lg font-bold text-slate-800">
+                          BTS SIO - SISR
+                        </h4>
+                        <span
+                          class="text-sm font-bold text-teal-600 bg-teal-100 px-3 py-1 rounded-full"
+                          >2024-2026</span
+                        >
+                      </div>
+                      <p class="text-slate-600">
+                        Formation en cours - Spécialisation Solutions
+                        d'Infrastructure, Systèmes et Réseaux
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="relative flex items-start group">
+                    <div
+                      class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                    >
+                      <svg
+                        class="w-8 h-8 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div
+                      class="ml-6 bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-teal-100/60 shadow-lg flex-1 group-hover:shadow-xl transition-all duration-300"
+                    >
+                      <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-lg font-bold text-slate-800">
+                          Autoformation
+                        </h4>
+                        <span
+                          class="text-sm font-bold text-teal-600 bg-teal-100 px-3 py-1 rounded-full"
+                          >2023-2024</span
+                        >
+                      </div>
+                      <p class="text-slate-600">
+                        Apprentissage autodidacte des technologies web modernes
+                        et développement de projets personnels
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="relative flex items-start group">
+                    <div
+                      class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-teal-600 to-teal-800 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                    >
+                      <svg
+                        class="w-8 h-8 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div
+                      class="ml-6 bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-teal-100/60 shadow-lg flex-1 group-hover:shadow-xl transition-all duration-300"
+                    >
+                      <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-lg font-bold text-slate-800">
+                          Recherche d'alternance
+                        </h4>
+                        <span
+                          class="text-sm font-bold text-teal-600 bg-teal-100 px-3 py-1 rounded-full"
+                          >Maintenant</span
+                        >
+                      </div>
+                      <p class="text-slate-600">
+                        À la recherche d'une entreprise pour une alternance
+                        enrichissante en développement ou infrastructure
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to action -->
+        <div class="text-center mt-20">
+          <div class="inline-flex items-center space-x-6">
+            <a
+              href="#competences"
+              class="group relative px-8 py-4 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-500 overflow-hidden"
+            >
+              <span class="relative z-10 flex items-center">
+                <svg
+                  class="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  ></path>
+                </svg>
+                Voir mes compétences
+              </span>
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-teal-600 to-teal-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+            </a>
+
+            <a
+              href="#contact"
+              class="group relative px-8 py-4 bg-white/90 backdrop-blur-sm text-slate-700 font-bold rounded-2xl border-2 border-slate-200 hover:border-teal-300 shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-500"
+            >
+              <span class="relative z-10 flex items-center">
+                <svg
+                  class="w-5 h-5 mr-3 group-hover:rotate-12 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                Me contacter
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+
+    <!-- Projets -->
+
+    <!-- Contact -->
+
+    <!-- Footer -->
+
+    <!-- Scripts -->
+    <script src="./src/scripts/navbar.js"></script>
+    <script src="./src/scripts/hero.js"></script>
+    <script src="./src/scripts/apropos.ts"></script>
+    <script src="./src/scripts/fondanime.js"></script>
+  </body>
+</html>
